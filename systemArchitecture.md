@@ -41,10 +41,17 @@ Frontend communicates with the backend via RESTful API calls (HTTPS) to fetch an
 - budgets -	Tracks monthly budgets per user, including income and allocated spendin
 
 
+  ## Technical Feasibility
+- Scalability: Node.js and Postgres support large datasets and real-time updates.
+- Security: Uses HTTPS for secure connections. Sensitive data (like tokens) stored securely.
+- Maintainability: Modular structure allows easy feature additions (e.g., AI insights in future).
+- Performance: Asynchronous APIs (Node.js) enable fast response times and reduced load.
+
 
 
 Tables Schema (simplified):
 
+```javascript
 -- USERS TABLE
    - id SERIAL PRIMARY KEY,
    - name VARCHAR(100),
@@ -77,9 +84,3 @@ Tables Schema (simplified):
    - type VARCHAR(20) CHECK (type IN ('income', 'expense')),          
    - created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP       
 
-
-  ## Technical Feasibility
-- Scalability: Node.js and Postgres support large datasets and real-time updates.
-- Security: Uses HTTPS for secure connections. Sensitive data (like tokens) stored securely.
-- Maintainability: Modular structure allows easy feature additions (e.g., AI insights in future).
-- Performance: Asynchronous APIs (Node.js) enable fast response times and reduced load.
