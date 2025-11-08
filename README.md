@@ -27,10 +27,10 @@ Finora is built for:
 - Budget Reminders & Nudges – Get smart notifications about how your spending is trending for the month.  
 
 ## Technologies 
-Frontend-React.js, Tailwind CSS 
-Backend-Node.js (Express) 
-API Integration - Mono or Paystack (for secure bank connection) 
-Hosting-Vercel (Frontend), Render or AWS or digital Ocean (Backend) 
+- Frontend-React.js, Tailwind CSS  
+- Backend-Node.js (Express)   
+- API Integration - Mono or Paystack (for secure bank connection) 
+- Hosting-Vercel (Frontend), Render or AWS or digital Ocean (Backend) 
 
 ## Vision
 Finora aims to become your personal finance companion, a tool that doesn’t just track your money but guides you toward better financial habits.
