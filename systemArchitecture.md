@@ -43,49 +43,7 @@ budgets -	Tracks monthly budgets per user, including income and allocated spendi
 
 Tables Schema (simplified):
 
-
--- USERS TABLE
-CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(100),
-    email VARCHAR(100) UNIQUE NOT NULL,
-    password_hash TEXT NOT NULL,
-    email_verified BOOLEAN DEFAULT FALSE,             
-    monthly_recurring_intake NUMERIC(12, 2),           
-    current_balance NUMERIC(12, 2),                  
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
-
--- BUDGETS TABLE
-CREATE TABLE budgets (
-    id SERIAL PRIMARY KEY,
-    user_id INT REFERENCES users(id) ON DELETE CASCADE,   
-    month DATE NOT NULL,                                   
-    target_monthly_leftover_income NUMERIC(12, 2) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
-
--- EXPENSE CATEGORIES TABLE
-CREATE TABLE expense_categories (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,                            
-    cost NUMERIC(12, 2) NOT NULL,                         
-    priority VARCHAR(20) CHECK (priority IN ('High', 'Medium', 'Low'))  
-);
-
-
--- TRANSACTIONS TABLE
-CREATE TABLE transactions (
-    id SERIAL PRIMARY KEY,
-    user_id INT REFERENCES users(id) ON DELETE CASCADE,  
-    category_id INT REFERENCES expense_categories(id),     -- Can link to expense category, nullable
-    amount NUMERIC(12, 2) NOT NULL,
-    type VARCHAR(20) CHECK (type IN ('income', 'expense')),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
+<pre> sql -- USERS CREATE TABLE users ( id SERIAL PRIMARY KEY, name VARCHAR(100), email VARCHAR(100) UNIQUE NOT NULL, password_hash TEXT NOT NULL, email_verified BOOLEAN DEFAULT FALSE, monthly_recurring_intake NUMERIC(12, 2), current_balance NUMERIC(12, 2), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ); -- BUDGETS CREATE TABLE budgets ( id SERIAL PRIMARY KEY, user_id INT REFERENCES users(id) ON DELETE CASCADE, month DATE NOT NULL, target_monthly_leftover_income NUMERIC(12, 2) NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ); -- EXPENSE CATEGORIES CREATE TABLE expense_categories ( id SERIAL PRIMARY KEY, name VARCHAR(100) NOT NULL, cost NUMERIC(12, 2) NOT NULL, priority VARCHAR(20) CHECK (priority IN ('High', 'Medium', 'Low')) ); -- TRANSACTIONS CREATE TABLE transactions ( id SERIAL PRIMARY KEY, user_id INT REFERENCES users(id) ON DELETE CASCADE, category_id INT REFERENCES expense_categories(id), amount NUMERIC(12, 2) NOT NULL, type VARCHAR(20) CHECK (type IN ('income', 'expense')), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP );  </pre>
 
 Communication flow
 [User Interface] = [REST API] = [Backend Logic] = [Database]
