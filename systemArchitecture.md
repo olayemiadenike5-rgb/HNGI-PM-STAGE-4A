@@ -78,13 +78,8 @@ Tables Schema (simplified):
    - created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP       
 
 
-Communication flow
-[User Interface] = [REST API] = [Backend Logic] = [Database]
-                         
-   (User Input)          (Data Processing)
-
-Technical Feasibility
--Scalability: Node.js and Postgres support large datasets and real-time updates.
--Security: Uses HTTPS for secure connections. Sensitive data (like tokens) stored securely.
--Maintainability: Modular structure allows easy feature additions (e.g., AI insights in future).
--Performance: Asynchronous APIs (Node.js) enable fast response times and reduced load.
+  ## Technical Feasibility
+- Scalability: Node.js and Postgres support large datasets and real-time updates.
+- Security: Uses HTTPS for secure connections. Sensitive data (like tokens) stored securely.
+- Maintainability: Modular structure allows easy feature additions (e.g., AI insights in future).
+- Performance: Asynchronous APIs (Node.js) enable fast response times and reduced load.
