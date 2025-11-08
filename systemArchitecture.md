@@ -40,16 +40,14 @@ Frontend communicates with the backend via RESTful API calls (HTTPS) to fetch an
 - expense_categories - Defines, store  and manages categories and priorities for expenses. 
 - budgets -	Tracks monthly budgets per user, including income and allocated spendin
 
-
-  ## Technical Feasibility
+## Technical Feasibility
 - Scalability: Node.js and Postgres support large datasets and real-time updates.
 - Security: Uses HTTPS for secure connections. Sensitive data (like tokens) stored securely.
 - Maintainability: Modular structure allows easy feature additions (e.g., AI insights in future).
 - Performance: Asynchronous APIs (Node.js) enable fast response times and reduced load.
 
 
-
-Tables Schema (simplified):
+### 4. Tables Schema (simplified):
 
 ```javascript
 -- USERS TABLE
