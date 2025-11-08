@@ -33,14 +33,14 @@ Frontend communicates with the backend via RESTful API calls (HTTPS) to fetch an
 - Technology: PostgreSQL (Relational SQL Db)  
 - Purpose: Stores user profiles, transactions, categorized expenses, and goal data in relational tables to ensure data integrity, scalability, and consistency across financial records.
 
-## Core Tables	
+#### Core Tables	
 
 - users - 	Stores user credentials, preferences, and profile details.
 - transactions - Logs all income and expense transactions linked to users.  
 - expense_categories - Defines, store  and manages categories and priorities for expenses. 
 - budgets -	Tracks monthly budgets per user, including income and allocated spendin
 
-## Technical Feasibility
+#### Technical Feasibility
 - Scalability: Node.js and Postgres support large datasets and real-time updates.
 - Security: Uses HTTPS for secure connections. Sensitive data (like tokens) stored securely.
 - Maintainability: Modular structure allows easy feature additions (e.g., AI insights in future).
